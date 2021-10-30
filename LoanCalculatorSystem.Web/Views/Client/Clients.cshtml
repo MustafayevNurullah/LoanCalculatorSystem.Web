@@ -1,0 +1,44 @@
+﻿@using LoanCalculatorSystem.Core.Models;
+@model IEnumerable<Client>
+@{
+    ViewData["Title"] = "Clients";
+}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<table>
+
+    <tr>
+        <th>Client ID</th>
+        <th>Client</th>
+        <th>LoanAmount</th>
+        <th>PayoutDate</th>
+    </tr>
+        @foreach (var item in @Model)
+        {
+
+            <tr>
+                <th>@item.CLientUniqueID </th>
+                <th>@item.Name @item.Surname</th>
+
+            </tr>
+        }
+
+    </table>
+
+<button type="button" onclick="location.href='@Url.Action("Calculator", "Loan")'">New</button>
+<button type="button">Exit</button>

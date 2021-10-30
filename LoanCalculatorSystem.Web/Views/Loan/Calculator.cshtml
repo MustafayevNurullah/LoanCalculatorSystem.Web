@@ -1,0 +1,37 @@
+﻿@using LoanCalculatorSystem.Core.Models;
+@model IEnumerable<Client>
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<select name="cars" id="cars">
+    @foreach (var item in Model)
+    {
+        <option>@item.CLientUniqueID @item.Name @item.Surname</option>
+    }
+
+</select><br /><br><br><br><br><br><br>
+    <label for="fname">Telephone number</label>
+    <input type="text" id="fname" name="fname"><br/><br><br>
+
+
+        <form action="Calculator" method="post">
+            <label for="fname">Loan amount</label>
+            <input type="text"  name="amount" ><br><br><br>
+            <label for="lname">Loan Period(month)</label>
+            <input type="text"  name="month" ><br><br><br>
+            <label for="lname">Monthly interest rate</label>
+            <input type="text"  name="rate" ><br><br><br>
+
+            <label for="lname">PayoutDate</label>
+            <input type="date"  name="date" ><br><br><br>
+
+
+
+
+            <input type="submit" value="Submit">
+        </form>
+   
+
+
+
